@@ -1,14 +1,15 @@
  pipeline
  {
-	 agent any
+	 //agent any
 	//agent {docker {image 'maven:3.6.3'}}
 	//agent { docker { image 'node:13.8'} }
-	  environment
-	  {
-	 	 dockerHome = tool 'myDocker'
+	agent { docker { image 'python:3.5.1' } }
+	environment
+	{
+		dockerHome = tool 'myDocker'
 	 	
-	 	 PATH = "$dockerHome/bin:$PATH"
-	  }
+	 	PATH = "$dockerHome/bin:$PATH"
+	}
 	 
 	
 	stages
